@@ -9,12 +9,11 @@ pipeline {
             steps {
                echo " Delivering to sandbox";
                script { 
-                    if (env.BRANCH_NAME.contains('dev')) {
-                        echo 'This is not master but for sandbox'
-                    } else {
-                        echo 'things and stuff'
-                    }
+                    if (env.BRANCH_NAME.contains('feature')) {
+                        echo 'This is only for feature branch'
+                    } 
                 }
+                echo "Not delivering to feature";
             }
         }
 
