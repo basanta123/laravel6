@@ -24,7 +24,7 @@ pipeline {
             steps {
                echo " Delivering to production";
 
-            }
+            } 
         }
         
     }
