@@ -13,7 +13,7 @@ pipeline {
 
         stage('Deliver for production') {
             when {
-                branch 'production'
+                branch 'master'
             }
             steps {
                echo " Delivering to production";
