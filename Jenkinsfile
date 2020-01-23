@@ -2,27 +2,23 @@ pipeline {
     agent any
     stages {
 
-        when {
-            branch 'develop'
-       
-
-            stage('Deliver for sandbox') {
-            
-                steps {
-                echo " Delivering to sandbox";
-                }
+        stage('Deliver for sandbox') {
+            when {
+                branch 'develop'
+            }
+            steps {
+               echo " Delivering to sandbox";
             }
         }
-        when {
-                branch 'master'
-            
-                stage('Deliver for production') {
-                    
-                    steps {
-                    echo " Delivering to production";
 
-                    }
-                }
+        stage('Deliver for production') {
+            when {
+                branch 'production'
+            }
+            steps {
+               echo " Delivering to production";
+
+            }
         }
         
     }
